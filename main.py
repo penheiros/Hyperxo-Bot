@@ -15,11 +15,14 @@ async def on_ready():
 @commands.has_any_role('HE | Owner', 'HE | Co-Owner', 'HE | Management', "HE | Developer")
 @client.command()
 async def announce(ctx, *, arg):
-    information = arg 
-    desired_channel = information.split('-')[1] if '-' in information else 887745818654818375
-    print(desired_channel)
+    information = arg
+    to_announce = information if '=' not in information else information.split('=')[0]
 
+    announcement_channel_info = 887745818654818375 if '=' not in information else information.split('=')[1]
+    announcement_id = int(''.join([number for number in announcement_channel_info if number.isnumeric()]))
+    announcement_channel = client.get_channel(announcement_id)
 
+    await announcement_channel.send(to_announce)
 
 
 
