@@ -3,7 +3,7 @@ from discord import activity
 from discord.ext import commands
 from discord import Color as col
 
-token = "ODg5MDYxNTE2NDg0MTY5NzM5.YUbxDw.WbHpZTUNCkC27W6BrS32kyU3EN0"
+token = "" #"ODg5MDYxNTE2NDg0MTY5NzM5.YUbxDw.WbHpZTUNCkC27W6BrS32kyU3EN0"
 activity = discord.Game(name="Valorant | -help")
 client = commands.Bot(command_prefix="-", activity=activity)
 
